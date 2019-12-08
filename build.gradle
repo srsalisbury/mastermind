@@ -33,3 +33,14 @@ task mastermind(type:JavaExec) {
 	classpath = sourceSets.main.runtimeClasspath
 	main = 'mastermind.GameMaster'
 }
+
+jar {
+	manifest {
+		attributes "Main-Class" : "mastermind.GameMaster"
+	}
+	from {
+		configurations.compile.collect {
+			it.isDirectory() ? it:zipTree(it)
+		}
+	}
+}

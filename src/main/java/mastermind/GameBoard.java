@@ -23,6 +23,10 @@ public class GameBoard {
     return turns;
   }
 
+  public int numTurns() {
+    return turns.size();
+  }
+
   public boolean hasWon() {
     for (Turn turn : turns) {
       if (turn.isCorrect()) {
@@ -32,9 +36,11 @@ public class GameBoard {
     return false;
   }
 
-  public void print() {
+  public String toString() {
+    StringBuffer buffer = new StringBuffer();
     for (Turn turn : turns) {
-      System.out.println(turn + "\n");
+      buffer.append(turn + "\n");
     }
+    return buffer.toString();
   }
 }

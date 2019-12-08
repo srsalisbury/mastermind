@@ -36,4 +36,11 @@ public class PieceSetTest {
           new PieceSet("xgpr");
         });
   }
+
+  @Test
+  public void toStringTest() {
+    assertThat(new PieceSet("rgpy").toString()).isEqualTo("R G P Y ");
+    assertThat(new PieceSet("woyg").toString()).isEqualTo("W O Y G ");
+    assertThat(new PieceSet("rrgo").toString()).isEqualTo("R R G O ");
+  }
 }

@@ -18,6 +18,6 @@ public abstract class Turn {
   }
 
   public String toString() {
-  	return "" + guess() + result();
+    return "" + guess() + "- " + result();
   }
 }

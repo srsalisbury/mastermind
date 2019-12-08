@@ -18,4 +18,11 @@ class PieceTest {
           Piece.fromChar('X');
         });
   }
+
+  @Test
+  public void toStringTest() {
+    assertThat(Piece.RED.toString()).isEqualTo("R");
+    assertThat(Piece.PURPLE.toString()).isEqualTo("P");
+    assertThat(Piece.GREEN.toString()).isEqualTo("G");
+  }
 }

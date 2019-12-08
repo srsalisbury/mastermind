@@ -18,6 +18,6 @@ public abstract class Result {
   }
 
   public String toString() {
-  	return "" + numPiecesRightPlace() + " " + numPiecesWrongPlace();
+    return "" + numPiecesRightPlace() + " " + numPiecesWrongPlace();
   }
 }

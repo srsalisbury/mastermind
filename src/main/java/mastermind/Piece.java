@@ -26,7 +26,8 @@ public enum Piece {
       case 'W':
         return Piece.WHITE;
       default:
-        throw new IllegalArgumentException("Character given does not match any Piece Color");
+        throw new IllegalArgumentException(
+            "Character " + theChar + " does not match any Piece Color");
     }
   }
 
@@ -37,6 +38,6 @@ public enum Piece {
   }
 
   public String toString() {
-    return this.name().substring(0, 1);
+    return name().substring(0, 1);
   }
 }

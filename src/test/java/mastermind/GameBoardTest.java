@@ -46,4 +46,17 @@ public class GameBoardTest {
     board.addGuess(wrongGuess2);
     assertThat(board.hasWon()).isTrue();
   }
+
+  @Test
+  public void toStringTest() {
+    PieceSet solution = new PieceSet("WRGY");
+    PieceSet guess1 = new PieceSet("RRGO");
+    PieceSet guess2 = new PieceSet("OGYW");
+    GameBoard board = new GameBoard(solution);
+    assertThat(board.toString()).isEqualTo("");
+    board.addGuess(guess1);
+    assertThat(board.toString()).isEqualTo("R R G O - 2 0\n");
+    board.addGuess(guess2);
+    assertThat(board.toString()).isEqualTo("R R G O - 2 0\nO G Y W - 0 3\n");
+  }
 }
