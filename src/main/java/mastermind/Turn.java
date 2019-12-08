@@ -13,7 +13,11 @@ public abstract class Turn {
 
   public abstract Result result();
 
-  public boolean hasWon() {
-    return result().hasWon();
+  public boolean isCorrect() {
+    return result().isCorrect();
+  }
+
+  public String toString() {
+  	return "" + guess() + result();
   }
 }

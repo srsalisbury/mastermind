@@ -15,6 +15,7 @@ repositories {
 dependencies {
 	annotationProcessor 'com.google.auto.value:auto-value:1.7'
 	compileOnly 'com.google.auto.value:auto-value-annotations:1.7'
+	compile 'com.google.guava:guava:23.5-jre'
 	testImplementation 'com.google.truth:truth:1.0'
 	testImplementation 'org.junit.jupiter:junit-jupiter:5.5.2'
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
@@ -26,9 +27,9 @@ test {
 		events "passed", "skipped", "failed"
 	}
 }
-/*
-task projectilelaunch(type:JavaExec) {
-  classpath = sourceSets.main.runtimeClasspath
-  main = 'projects.ProjectileTracker'
+
+task mastermind(type:JavaExec) {
+	standardInput = System.in
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'mastermind.GameMaster'
 }
-*/

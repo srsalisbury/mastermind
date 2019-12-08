@@ -23,6 +23,14 @@ public class PieceSet {
     }
   }
 
+  public static PieceSet makeRandom() {
+    Piece[] pieces = new Piece[setLength];
+    for (int i = 0; i < setLength; i++) {
+      pieces[i] = Piece.makeRandom();
+    }
+    return new PieceSet(pieces);
+  }
+
   public Piece getPiece(int index) {
     return pieces[index];
   }
@@ -37,5 +45,13 @@ public class PieceSet {
     }
     PieceSet otherPieces = (PieceSet) other;
     return java.util.Arrays.equals(pieces, otherPieces.pieces);
+  }
+
+  public String toString() {
+    String returnString = "";
+    for (int i = 0; i < setLength; i++) {
+      returnString += (pieces[i] + " ");
+    }
+    return returnString;
   }
 }

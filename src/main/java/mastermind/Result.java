@@ -13,7 +13,11 @@ public abstract class Result {
 
   public abstract int numPiecesWrongPlace();
 
-  public boolean hasWon() {
+  public boolean isCorrect() {
     return numPiecesRightPlace() == PieceSet.setLength;
+  }
+
+  public String toString() {
+  	return "" + numPiecesRightPlace() + " " + numPiecesWrongPlace();
   }
 }

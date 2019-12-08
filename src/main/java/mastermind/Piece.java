@@ -1,5 +1,7 @@
 package mastermind;
 
+import java.util.Random;
+
 public enum Piece {
   RED,
   ORANGE,
@@ -26,5 +28,15 @@ public enum Piece {
       default:
         throw new IllegalArgumentException("Character given does not match any Piece Color");
     }
+  }
+
+  public static Piece makeRandom() {
+    Random random = new Random();
+    Piece[] allPieces = Piece.values();
+    return allPieces[random.nextInt(allPieces.length)];
+  }
+
+  public String toString() {
+    return this.name().substring(0, 1);
   }
 }
